@@ -18,7 +18,7 @@
             <p-column field="MemberSince" header="Member Since" filter="true" filterMatchMode="contains" sortable="true"></p-column>
             <p-column field="action" header="Action">
                 <template pTemplate="body" let-member="rowData">
-                    <a [routerLink]="['/addmember', member.MemberId]" style="cursor: pointer"><i class="fa ui-icon-edit"></i></a>
+                    <a [routerLink]="['/editmember', member.MemberId]" style="cursor: pointer"><i class="fa ui-icon-edit"></i></a>
                 </template>
             </p-column>
         </p-dataTable>

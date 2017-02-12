@@ -17,6 +17,8 @@ var add_member_component_1 = require('./addmember/add-member.component');
 var add_member_service_1 = require('./addmember/add-member.service');
 var show_members_component_1 = require('./showmembers/show-members.component');
 var show_members_service_1 = require('./showmembers/show-members.service');
+var edit_member_component_1 = require('./editmember/edit-member.component');
+var edit_member_service_1 = require('./editmember/edit-member.service');
 var AppMemberModule = (function () {
     function AppMemberModule() {
     }
@@ -31,11 +33,13 @@ var AppMemberModule = (function () {
                 router_1.RouterModule.forChild(app_member_routes_1.AppMemberRoutes)],
             declarations: [
                 add_member_component_1.AddMemberComponent,
-                show_members_component_1.ShowMembersComponent
+                show_members_component_1.ShowMembersComponent,
+                edit_member_component_1.EditMemberComponent
             ],
             providers: [
                 add_member_service_1.AddMemberService,
-                show_members_service_1.ShowMembersService
+                show_members_service_1.ShowMembersService,
+                edit_member_service_1.EditMemberService
             ]
         }), 
         __metadata('design:paramtypes', [])

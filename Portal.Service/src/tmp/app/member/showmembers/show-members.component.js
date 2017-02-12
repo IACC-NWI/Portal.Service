@@ -16,6 +16,8 @@ var ShowMembersComponent = (function () {
         this.members = new Array();
     }
     ShowMembersComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.showMemberService.getAllMembers().subscribe(function (members) { return _this.members = members; });
     };
     ShowMembersComponent.prototype.lookupMember = function () {
         var _this = this;

@@ -12,14 +12,38 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var moment = require('moment');
 var member_model_1 = require('../member.model');
-var ShowMembersService = (function () {
-    function ShowMembersService(http) {
+var EditMemberService = (function () {
+    function EditMemberService(http) {
         this.http = http;
         this.serviceUrls = SERVICE_URL;
     }
-    ShowMembersService.prototype.lookupMemberUsingPhoneNumber = function (phoneNumber) {
+    EditMemberService.prototype.getMemberById = function (memberId) {
         var _this = this;
-        return this.http.get(this.serviceUrls.MEMBER_SERVICE + '/api/member/lookupbyphone/' + phoneNumber)
+        return this.http.get(this.serviceUrls.MEMBER_SERVICE + '/api/member/lookupbyid/' + memberId)
+            .map(function (res) {
+            return _this.convertJsonToMember(res);
+        })
+            .catch(function (error, source) {
+            if (error.status === 400) {
+                console.log('Bad Model.');
+            }
+        });
+    };
+    EditMemberService.prototype.updateMember = function (memberModel) {
+        var _this = this;
+        return this.http.post(this.serviceUrls.MEMBER_SERVICE + '/api/member/updatemember', memberModel)
+            .map(function (res) {
+            return _this.convertJsonToMember(res);
+        })
+            .catch(function (error, source) {
+            if (error.status === 400) {
+                console.log('Bad Model.');
+            }
+        });
+    };
+    EditMemberService.prototype.getFamily = function (parentMemberId) {
+        var _this = this;
+        return this.http.get(this.serviceUrls.MEMBER_SERVICE + '/api/member/getfamily/' + parentMemberId)
             .map(function (res) {
             return _this.convertJsonToListOfMembers(res);
         })
@@ -29,19 +53,26 @@ var ShowMembersService = (function () {
             }
         });
     };
-    ShowMembersService.prototype.getAllMembers = function () {
-        var _this = this;
-        return this.http.get(this.serviceUrls.MEMBER_SERVICE + '/api/member/getallmembers')
-            .map(function (res) {
-            return _this.convertJsonToListOfMembers(res);
-        })
-            .catch(function (error, source) {
-            if (error.status === 400) {
-                console.log('Bad Model.');
-            }
-        });
+    EditMemberService.prototype.convertJsonToMember = function (data) {
+        var memberData = data.json() || {};
+        var retMember = new member_model_1.MemberModel();
+        retMember.MemberId = memberData.MemberId;
+        retMember.MemberSince = memberData.MemberSince;
+        retMember.PhoneNumber = memberData.PhoneNumber;
+        retMember.FirstName = memberData.FirstName;
+        retMember.LastName = memberData.LastName;
+        retMember.AddressLine1 = memberData.AddressLine1;
+        retMember.AddressLine2 = memberData.AddressLine2;
+        retMember.City = memberData.City;
+        retMember.State = memberData.State;
+        retMember.Zip = memberData.Zip;
+        retMember.HasChildren = memberData.HasChildren;
+        retMember.HasParent = memberData.HasParent;
+        retMember.ParentMemberId = memberData.ParentMemberId;
+        retMember.Email = memberData.Email;
+        return retMember;
     };
-    ShowMembersService.prototype.convertJsonToListOfMembers = function (data) {
+    EditMemberService.prototype.convertJsonToListOfMembers = function (data) {
         var memberData = data.json() || [];
         var retData = new Array();
         memberData.forEach(function (item) {
@@ -64,12 +95,12 @@ var ShowMembersService = (function () {
         });
         return retData;
     };
-    ShowMembersService = __decorate([
+    EditMemberService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], ShowMembersService);
-    return ShowMembersService;
+    ], EditMemberService);
+    return EditMemberService;
 }());
-exports.ShowMembersService = ShowMembersService;
+exports.EditMemberService = EditMemberService;
 
-//# sourceMappingURL=show-members.service.js.map
+//# sourceMappingURL=edit-member.service.js.map

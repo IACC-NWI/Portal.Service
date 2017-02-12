@@ -235,6 +235,7 @@
     <Content Include="src\app\home\home.css" />
     <Content Include="src\app\home\home.html" />
     <Content Include="src\app\login\login.html" />
+    <Content Include="src\app\member\editmember\edit-member.html" />
     <Content Include="src\app\member\showmembers\show-members.html" />
     <Content Include="src\app\shared\layout\header.html" />
     <Content Include="src\app\shared\layout\sidebar.html" />
@@ -272,9 +273,14 @@
     <TypeScriptCompile Include="src\app\member\app-member.module.ts" />
     <TypeScriptCompile Include="src\app\member\app-member.routes.ts" />
     <TypeScriptCompile Include="src\app\member\addmember\add-member.component.ts" />
+    <TypeScriptCompile Include="src\app\member\editmember\edit-member.component.ts" />
+    <TypeScriptCompile Include="src\app\member\editmember\edit-member.service.ts" />
     <TypeScriptCompile Include="src\app\member\member.model.ts" />
     <TypeScriptCompile Include="src\app\member\showmembers\show-members.service.ts" />
     <TypeScriptCompile Include="src\app\member\showmembers\show-members.component.ts" />
+    <TypeScriptCompile Include="src\app\offeredservices\addfestival\add-festival.component.ts" />
+    <TypeScriptCompile Include="src\app\offeredservices\app-offered-services.module.ts" />
+    <TypeScriptCompile Include="src\app\offeredservices\app-offered-services.routes.ts" />
     <TypeScriptCompile Include="src\app\shared\app-shared.module.ts" />
     <TypeScriptCompile Include="src\app\shared\auth\auth-activate.guard.ts" />
     <TypeScriptCompile Include="src\app\shared\auth\auth-event.service.ts" />

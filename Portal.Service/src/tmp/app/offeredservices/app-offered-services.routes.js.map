@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/offeredservices/app-offered-services.routes.ts"],"names":[],"mappings":";AAEa,gCAAwB,GAAW,EAC/C,CAAC","file":"app-offered-services.routes.js","sourcesContent":["import { Routes } from '@angular/router';\r\n\r\nexport const AppOfferedServicesRoutes: Routes = [\r\n];"]}

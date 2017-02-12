@@ -22,6 +22,17 @@ export class ShowMembersService {
                 }
             });
     }
+    public getAllMembers() {
+        return this.http.get(this.serviceUrls.MEMBER_SERVICE + '/api/member/getallmembers')
+        .map(res => {
+                return this.convertJsonToListOfMembers(res);
+            })
+            .catch((error, source) => {
+                if (error.status === 400) {
+                    console.log('Bad Model.');
+                }
+            });
+    }
     convertJsonToListOfMembers(data: any): MemberModel[] {
         let memberData = data.json() || [];
         let retData = new Array<MemberModel>();

@@ -14,7 +14,7 @@ export class SidebarComponent implements OnInit {
     private items: MenuItem[];
     private authSubscription: Subscription;
     private dashboardNav: MenuItem;
-    private membersNav: MenuItem;
+    private adminNav: MenuItem;
 
     constructor(private route: ActivatedRoute,
         private router: Router, private authEventService: AuthEventService) {
@@ -36,7 +36,7 @@ export class SidebarComponent implements OnInit {
         // if (user && user.profile && user.profile.roles) {
 
             this.items.push(this.dashboardNav);
-            this.items.push(this.membersNav);
+            this.items.push(this.adminNav);
             
         // }
     }
@@ -50,14 +50,19 @@ export class SidebarComponent implements OnInit {
             routerLink: ['/']
         };
 
-        this.membersNav = {
-            label: 'Offering',
+        this.adminNav = {
+            label: 'Admin',
             icon: 'palette',
             items: [
                 {
                     label: 'Members lookup',
                     command: (event) => { this.router.navigate(['lookupmembers']); },
                     routerLink: ['/lookupmembers']
+                },
+                {
+                    label: 'Add Member',
+                    command: (event) => { this.router.navigate(['addmember']); },
+                    routerLink: ['/addmember']
                 }
             ]
         };

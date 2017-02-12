@@ -28,7 +28,7 @@ var SidebarComponent = (function () {
         this.items = [];
         // if (user && user.profile && user.profile.roles) {
         this.items.push(this.dashboardNav);
-        this.items.push(this.membersNav);
+        this.items.push(this.adminNav);
         // }
     };
     SidebarComponent.prototype.initializeLinks = function () {
@@ -39,14 +39,19 @@ var SidebarComponent = (function () {
             command: function (event) { _this.router.navigate(['dashboard']); },
             routerLink: ['/']
         };
-        this.membersNav = {
-            label: 'Offering',
+        this.adminNav = {
+            label: 'Admin',
             icon: 'palette',
             items: [
                 {
                     label: 'Members lookup',
                     command: function (event) { _this.router.navigate(['lookupmembers']); },
                     routerLink: ['/lookupmembers']
+                },
+                {
+                    label: 'Add Member',
+                    command: function (event) { _this.router.navigate(['addmember']); },
+                    routerLink: ['/addmember']
                 }
             ]
         };

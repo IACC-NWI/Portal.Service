@@ -9,6 +9,8 @@ import { AddMemberComponent } from './addmember/add-member.component';
 import { AddMemberService } from './addmember/add-member.service';
 import { ShowMembersComponent } from './showmembers/show-members.component';
 import { ShowMembersService } from './showmembers/show-members.service';
+import { EditMemberComponent } from './editmember/edit-member.component';
+import { EditMemberService } from './editmember/edit-member.service';
 
 @NgModule({
     imports: [
@@ -20,11 +22,13 @@ import { ShowMembersService } from './showmembers/show-members.service';
         RouterModule.forChild(AppMemberRoutes)],
     declarations: [
         AddMemberComponent,
-        ShowMembersComponent
+        ShowMembersComponent,
+        EditMemberComponent
     ],
     providers: [
         AddMemberService,
-        ShowMembersService
+        ShowMembersService,
+        EditMemberService
     ]
 
 })

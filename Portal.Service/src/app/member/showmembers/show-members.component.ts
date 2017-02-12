@@ -15,7 +15,7 @@ export class ShowMembersComponent implements OnInit {
     }
 
     ngOnInit(): void {
-
+        this.showMemberService.getAllMembers().subscribe(members => this.members = members);
     }
 
     lookupMember() {

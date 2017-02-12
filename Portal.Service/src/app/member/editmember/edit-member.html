@@ -1,9 +1,14 @@
 ﻿<div class="ui-g">
-    <div class="ui-g-12 ui-md-12 ui-lg-6">
+    <div class="ui-g-12 ui-md-6 ui-lg-6">
         <div class="ui-g">
             <div class="card card-w-title">
-                <h1>New Member</h1>
-                <div class="ui-g form-group" [formGroup]="newMemberForm">
+                <h1>
+                    Update Member
+                    <a [routerLink]="['/addmember', memberToEdit.MemberId]" style="cursor: pointer; float: right !important; font-size: 15px !important;vertical-align: text-top!important"><i class="fa ui-icon-add"></i> Add Family</a>
+                </h1>
+
+
+                <div class="ui-g form-group" [formGroup]="editMemberForm">
                     <div class="ui-g-12 ui-md-4">
                         <span class="md-inputfield">
                             <input type="hidden" formControlName="MemberId" />
@@ -60,10 +65,26 @@
                         </span>
                     </div>
                     <div class="ui-g-12">
-                        <button pButton (click)="saveMember(newMemberForm.value)" label="Save"></button>
+                        <button pButton (click)="update(editMemberForm.value)" label="Save"></button>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-6 ui-lg-6">
+        <div class="card card-w-title">
+            <h1>Family</h1>
+
+            <p-dataTable #dt [value]="familyMembers" [responsive]="true">
+                <p-column field="FirstName" header="First Name" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                <p-column field="LastName" header="Last Name" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                <p-column field="MemberSince" header="Member Since" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                <p-column field="action" header="Action">
+                    <template pTemplate="body" let-member="rowData">
+                        <a [routerLink]="['/editmember', member.MemberId]" style="cursor: pointer"><i class="fa ui-icon-edit"></i></a>
+                    </template>
+                </p-column>
+            </p-dataTable>
         </div>
     </div>
 </div>
