@@ -1,0 +1,32 @@
+﻿<div class="profile" [hidden]="profileMode!='inline'||layoutMode=='horizontal'||!loggedIn" style="height: 75px!important">
+    <a id="profile-options" href="#">
+        <span class="profile-name">{{firstName}} {{lastName}}</span>
+        <i class="material-icons">keyboard_arrow_down</i>
+    </a>
+</div>
+<ul id="profile-menu" class="ultima-menu" [hidden]="profileMode!='inline'||!loggedIn">
+    <li role="menuitem">
+        <a href="#" class="ripplelink">
+            <i class="material-icons">person</i>
+            <span>Profile</span>
+        </a>
+    </li>
+    <li role="menuitem">
+        <a href="#" class="ripplelink">
+            <i class="material-icons">security</i>
+            <span>Privacy</span>
+        </a>
+    </li>
+    <li role="menuitem">
+        <a href="#" class="ripplelink">
+            <i class="material-icons">settings_application</i>
+            <span>Settings</span>
+        </a>
+    </li>
+    <li role="menuitem" (click)="logOut(elem)">
+        <a href="/logout" class="ripplelink">
+            <i class="material-icons">power_settings_new</i>
+            <span>Logout</span>
+        </a>
+    </li>
+</ul>

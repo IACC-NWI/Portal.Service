@@ -1,5 +1,6 @@
 ﻿var envConfig = require('./env');
 var devConfig = require('./local-config');
+var historyApiFallback = require('connect-history-api-fallback');
 
 module.exports = function () {
     var root = '',

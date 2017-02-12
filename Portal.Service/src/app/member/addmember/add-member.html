@@ -1,0 +1,65 @@
+﻿<div class="ui-g">
+    <div class="card card-w-title">
+        <h1>New Member</h1>
+        <div class="ui-g form-group" [formGroup]="newMemberForm">
+            <div class="ui-g-12 ui-md-4">
+                <span class="md-inputfield">
+                    <input type="hidden" formControlName="MemberId" />
+                    <input type="text" pInputText formControlName="FirstName">
+                    <label>First Name</label>
+                </span>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <span class="md-inputfield">
+                    <input type="text" pInputText formControlName="LastName">
+                    <label>Last Name</label>
+                </span>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <span class="md-inputfield">
+                    <input type="text" pInputText formControlName="PhoneNumber">
+                    <label>Phone Number</label>
+                </span>
+            </div>
+            <div class="ui-g-12 ui-md-12">
+                <span class="md-inputfield">
+                    <input type="text" pInputText formControlName="Email">
+                    <label>Email</label>
+                </span>
+            </div>
+            <div class="ui-g-12 ui-md-12">
+                <span class="md-inputfield">
+                    <input type="text" pInputText formControlName="AddressLine1">
+                    <label>Street</label>
+                </span>
+            </div>
+            <div class="ui-g-12 ui-md-12">
+                <span class="md-inputfield">
+                    <input type="text" pInputText formControlName="AddressLine2">
+                    <label>Street</label>
+                </span>
+            </div>
+            <div class="ui-g-4 ui-md-4">
+                <span class="md-inputfield">
+                    <input type="text" pInputText formControlName="City">
+                    <label>City</label>
+                </span>
+            </div>
+            <div class="ui-g-4 ui-md-4">
+                <span class="md-inputfield">
+                    <input type="text" pInputText formControlName="State">
+                    <label>State</label>
+                </span>
+            </div>
+            <div class="ui-g-4 ui-md-4">
+                <span class="md-inputfield">
+                    <input type="text" pInputText formControlName="Zip">
+                    <label>Zip</label>
+                </span>
+            </div>
+            <div class="ui-g-12">
+                <button pButton (click)="saveMember(newMemberForm.value)" value="Save" ></button>
+            </div>
+        </div>
+    </div>
+</div>

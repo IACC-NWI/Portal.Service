@@ -26,6 +26,7 @@ build/
 [Pp]ackages/
 [Nn]ode[Mm]odules/
 nuget.exe
+**/src/app/**/*.js
 
 # MSTest test Results
 [Tt]est[Rr]esult*/

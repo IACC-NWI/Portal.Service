@@ -2,10 +2,10 @@
 
 settings = {
     authority: 'http://localhost:30020/identity/.well-known/openid-configuration',
-    client_id: 'iacc-nwi-temple',
+    client_id: 'iacc-nwi-portal',
     redirect_uri: urlRoot + '/',
     response_type: 'id_token token',
-    scope: 'openid profile iacc-temple',
+    scope: 'openid profile iacc-nwi-services',
     silent_redirect_uri: urlRoot + '/silentcallback.html',
     automaticSilentRenew: true,
     filterProtocolClaims: true,
@@ -21,5 +21,6 @@ settings = {
     }
 };
 SERVICE_URL = {
-    TEMPLE_SERVICE : 'http://localhost:30010'
+    TEMPLE_SERVICE: 'http://localhost:30010',
+    MEMBER_SERVICE: 'http://localhost:30030'
 }

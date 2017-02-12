@@ -1,0 +1,13 @@
+﻿<ul id="main-menu" class="ultima-menu clearfix">
+    <li role="menuitem" *ngFor='let item of items'>
+        <a [routerLink]="item.routerLink" *ngIf="!item.items">
+            <i class="material-icons">{{item.icon}}</i><span>{{item.label}}</span>
+        </a>
+        <a href="#" class="ripplelink" *ngIf="item.items"><i class="material-icons">{{item.icon}}</i><span>{{item.label}}</span><i class="material-icons">keyboard_arrow_down</i></a>
+        <ul role="menu" *ngIf="item.items">
+            <li role="menuitem" *ngFor='let subitem of item.items'>
+                <a class="ripplelink" [routerLink]="subitem.routerLink" [routerLinkActive]="['active-menulink']"><span>{{subitem.label}}</span></a>
+            </li>
+        </ul>
+    </li>
+</ul>

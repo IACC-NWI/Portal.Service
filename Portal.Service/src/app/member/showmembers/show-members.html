@@ -1,0 +1,27 @@
+﻿<div class="ui-g-12">
+    <div class="card card-w-title">
+        <h1>Members</h1>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="ui-g">
+                    <span class="md-inputfield">
+                        <input type="text" pInputText [(ngModel)]="memberPhoneNumber">
+                        <label>Phone Number</label>
+                    </span>
+                    <button pButton label="LookUp" (click)="lookupMember()"></button>
+                </div>
+            </div>
+        </div>
+        <p-dataTable #dt [value]="members" [responsive]="true">
+            <p-column field="FirstName" header="First Name" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+            <p-column field="LastName" header="Last Name" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+            <p-column field="MemberSince" header="Member Since" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+            <p-column field="action" header="Action">
+                <template pTemplate="body" let-member="rowData">
+                    <a [routerLink]="['/addmember', member.MemberId]" style="cursor: pointer"><i class="fa ui-icon-edit"></i></a>
+                </template>
+            </p-column>
+        </p-dataTable>
+    </div>
+
+</div>

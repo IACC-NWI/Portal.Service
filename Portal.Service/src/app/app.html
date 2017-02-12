@@ -1,0 +1,36 @@
+﻿<div [ngClass]="{'layout-wrapper':true,'layout-compact':layoutCompact}">
+
+    <div [ngClass]="{'layout-container':true,'menu-layout-static':(layoutMode=='static'||layoutMode=='horizontal'),
+            'menu-layout-overlay':(layoutMode=='overlay'),'menu-layout-horizontal':(layoutMode=='horizontal')}">
+        <div class="topbar clearfix">
+            <div class="topbar-left">
+                <!--<div class="logo"></div>-->
+            </div>
+            <div class="topbar-right">
+                <a id="menu-button" href="#">
+                    <i></i>
+                </a>
+                <a id="topbar-menu-button" href="#">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </div>
+        <div [ngClass]="{'layout-menu':true,'layout-menu-dark':darkMenu}">
+            <div class="nano">
+                <div class="nano-content menu-scroll-content">
+                    <iacc-header [profileMode]="profileMode" [layoutMode]="layoutMode"></iacc-header>
+                    <iacc-sidebar></iacc-sidebar>
+                </div>
+            </div>
+        </div>
+        <div class="layout-main">
+            <router-outlet></router-outlet>
+            <div class="footer">
+                <div class="card clearfix">
+                    <span class="footer-text-left">Indian American Cultural Center - Northwest Indiana</span>
+                    <span class="footer-text-right"><span class="ui-icon ui-icon-copyright"></span>  <span>All Rights Reserved</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
