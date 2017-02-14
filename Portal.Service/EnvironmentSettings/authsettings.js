@@ -21,6 +21,6 @@ settings = {
     }
 };
 SERVICE_URL = {
-    TEMPLE_SERVICE: 'http://localhost:30010',
+    TEMPLE_SERVICE: 'http://localhost:30040',
     MEMBER_SERVICE: 'http://localhost:30030'
 }

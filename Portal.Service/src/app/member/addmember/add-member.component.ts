@@ -4,7 +4,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import * as moment from 'moment';
 import { UUID } from 'angular2-uuid';
 
-import { AuthEventService } from 'app-shared';
 import { MemberModel } from '../member.model';
 import { AddMemberService } from './add-member.service';
 

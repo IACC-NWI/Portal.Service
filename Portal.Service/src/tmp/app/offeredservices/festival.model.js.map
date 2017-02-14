@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/offeredservices/festival.model.ts"],"names":[],"mappings":";AAAA;IAAA;IAIA,CAAC;IAAD,oBAAC;AAAD,CAJA,AAIC,IAAA;AAJY,qBAAa,gBAIzB,CAAA","file":"festival.model.js","sourcesContent":["export class FestivalModel {\r\n    FestivalId: string;\r\n    Name: string;\r\n    Description: string;\r\n}"]}

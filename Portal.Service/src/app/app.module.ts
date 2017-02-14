@@ -10,10 +10,10 @@ import { AppComponent } from './app.component';
 import { AppHomeModule } from './home/app-home.module';
 import { AppLoginModule } from './login/app-login.module';
 import { AppMemberModule } from './member/app-member.module';
+import { AppOfferedServicesModule } from './offeredservices/app-offered-services.module';
 // import { AppMemberModule } from './member/app-member.module';
 // import { AppAdminModule } from './admin/app-admin.module';
 
-// import { AppOfferedServicesModule } from './offeredservices/app-offered-services.module';
 const routing = RouterModule.forRoot(AppRoutes);
 
 @NgModule({
@@ -27,7 +27,8 @@ const routing = RouterModule.forRoot(AppRoutes);
         AppSharedModule.forRoot(),
         AppHomeModule,
         AppLoginModule,
-        AppMemberModule
+        AppMemberModule,
+        AppOfferedServicesModule
     ],
     declarations: [
         AppComponent

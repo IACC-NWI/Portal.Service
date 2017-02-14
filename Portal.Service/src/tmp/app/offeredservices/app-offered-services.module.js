@@ -13,6 +13,8 @@ var router_1 = require('@angular/router');
 var forms_1 = require('@angular/forms');
 var primeng_1 = require('primeng/primeng');
 var app_offered_services_routes_1 = require('./app-offered-services.routes');
+var add_festival_component_1 = require('./addfestival/add-festival.component');
+var add_festival_service_1 = require('./addfestival/add-festival.service');
 var AppOfferedServicesModule = (function () {
     function AppOfferedServicesModule() {
     }
@@ -22,11 +24,16 @@ var AppOfferedServicesModule = (function () {
                 primeng_1.ButtonModule,
                 primeng_1.InputTextModule,
                 primeng_1.DataTableModule,
+                primeng_1.EditorModule,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
                 router_1.RouterModule.forChild(app_offered_services_routes_1.AppOfferedServicesRoutes)],
-            declarations: [],
-            providers: []
+            declarations: [
+                add_festival_component_1.AddFestivalComponent
+            ],
+            providers: [
+                add_festival_service_1.AddFestivalService
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], AppOfferedServicesModule);

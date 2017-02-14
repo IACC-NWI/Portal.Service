@@ -20,9 +20,9 @@ var app_component_1 = require('./app.component');
 var app_home_module_1 = require('./home/app-home.module');
 var app_login_module_1 = require('./login/app-login.module');
 var app_member_module_1 = require('./member/app-member.module');
+var app_offered_services_module_1 = require('./offeredservices/app-offered-services.module');
 // import { AppMemberModule } from './member/app-member.module';
 // import { AppAdminModule } from './admin/app-admin.module';
-// import { AppOfferedServicesModule } from './offeredservices/app-offered-services.module';
 var routing = router_1.RouterModule.forRoot(app_routes_1.AppRoutes);
 var AppModule = (function () {
     function AppModule() {
@@ -39,7 +39,8 @@ var AppModule = (function () {
                 app_shared_module_1.AppSharedModule.forRoot(),
                 app_home_module_1.AppHomeModule,
                 app_login_module_1.AppLoginModule,
-                app_member_module_1.AppMemberModule
+                app_member_module_1.AppMemberModule,
+                app_offered_services_module_1.AppOfferedServicesModule
             ],
             declarations: [
                 app_component_1.AppComponent

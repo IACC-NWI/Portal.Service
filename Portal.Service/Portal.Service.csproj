@@ -237,6 +237,7 @@
     <Content Include="src\app\login\login.html" />
     <Content Include="src\app\member\editmember\edit-member.html" />
     <Content Include="src\app\member\showmembers\show-members.html" />
+    <Content Include="src\app\offeredservices\addfestival\add-festival.html" />
     <Content Include="src\app\shared\layout\header.html" />
     <Content Include="src\app\shared\layout\sidebar.html" />
     <Content Include="src\assets\fonts\roboto-v15-latin-300.svg" />
@@ -279,8 +280,13 @@
     <TypeScriptCompile Include="src\app\member\showmembers\show-members.service.ts" />
     <TypeScriptCompile Include="src\app\member\showmembers\show-members.component.ts" />
     <TypeScriptCompile Include="src\app\offeredservices\addfestival\add-festival.component.ts" />
+    <TypeScriptCompile Include="src\app\offeredservices\addfestival\add-festival.service.ts" />
+    <TypeScriptCompile Include="src\app\offeredservices\addofferedservices\add-offered-services.component.ts" />
+    <TypeScriptCompile Include="src\app\offeredservices\addofferedservices\add-offered-services.service.ts" />
     <TypeScriptCompile Include="src\app\offeredservices\app-offered-services.module.ts" />
     <TypeScriptCompile Include="src\app\offeredservices\app-offered-services.routes.ts" />
+    <TypeScriptCompile Include="src\app\offeredservices\festival.model.ts" />
+    <TypeScriptCompile Include="src\app\offeredservices\offered-service.model.ts" />
     <TypeScriptCompile Include="src\app\shared\app-shared.module.ts" />
     <TypeScriptCompile Include="src\app\shared\auth\auth-activate.guard.ts" />
     <TypeScriptCompile Include="src\app\shared\auth\auth-event.service.ts" />
