@@ -1,0 +1,41 @@
+﻿<div class="ui-g">
+    <div class="ui-g-12 ui-md-12 ui-lg-6">
+        <div class="ui-g">
+            <div class="card card-w-title">
+                <h1>New Service</h1>
+                <div class="ui-g form-group" [formGroup]="newOfferedServicesForm">
+                    <div class="ui-g-12">
+                        <p-dropdown [options]="festivals" [autoWidth]="false"
+                                    formControlName="FestivalId"
+                                    (onChange)="festivalSelectValueChange(event)"></p-dropdown>
+                    </div>
+                    <div class="ui-g-12 ui-md-6">
+                        <span class="md-inputfield">
+                            <input type="hidden" formControlName="ServiceId" />
+                            <input type="hidden" formControlName="FestivalId" />
+                            <input type="hidden" formControlName="FestivalName" />
+                            <input type="text" pInputText formControlName="Name">
+                            <label>Name</label>
+                        </span>
+                    </div>
+                    <div class="ui-g-12 ui-md-6">
+                        <span class="md-inputfield">
+                            <input type="number" pInputText formControlName="SuggestedDonation" />
+                        </span>
+                    </div>
+
+                    <div class="ui-g-12 ui-md-12">
+                        <label>Description</label>
+                        <p-editor [style]="{'height':'320px'}" formControlName="Description"></p-editor>
+                    </div>
+                    <div class="ui-g-12">
+                        <button pButton (click)="saveOfferedService(newOfferedServicesForm.value)" label="Save"></button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

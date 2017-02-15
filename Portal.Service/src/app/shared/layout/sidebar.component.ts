@@ -68,6 +68,11 @@ export class SidebarComponent implements OnInit {
                     label: 'Add Festival',
                     command: (event) => { this.router.navigate(['addfestival']); },
                     routerLink: ['/addfestival']
+                },
+                {
+                    label: 'Add Service',
+                    command: (event) => { this.router.navigate(['addofferedservice']) },
+                    routerLink: ['/addofferedservice']
                 }
             ]
         };

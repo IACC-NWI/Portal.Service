@@ -1,5 +1,15 @@
 ﻿<div class="ui-g ui-fluid">
-    <div class="ui-lg-4 ui-g-1 ui-md-4"></div>
+    <div class="ui-lg-4 ui-g-1 ui-md-4">
+        <div class="ui-g form-group" [formGroup]="purchaseOfferingsForm">
+            <p-autoComplete formControlName="MemberId" [suggestions]="memberResults" field="MemberId"
+                            (completeMethod)="searchMembers($event)">
+                <template let-member pTemplate="item">
+                    <strong> {{member.FirstName}} </strong> <br/>
+                    <strong> {{member.LastName}}</strong>
+                </template>
+            </p-autoComplete>
+        </div>
+    </div>
     <div class="ui-lg-4 ui-md-4 ui-g-10">
         <div class="card card-w-title">
             <h1>Lookup Member Info</h1>

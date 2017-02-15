@@ -9,9 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var forms_1 = require('@angular/forms');
+var angular2_uuid_1 = require('angular2-uuid');
+var home_service_1 = require('./home.service');
 var HomeComponent = (function () {
-    function HomeComponent() {
+    function HomeComponent(homeService, formBuilder) {
+        this.homeService = homeService;
+        this.formBuilder = formBuilder;
     }
+    HomeComponent.prototype.ngOnInit = function () {
+        var purchaseId = angular2_uuid_1.UUID.UUID();
+        this.purchaseOfferingsForm = this.formBuilder.group({
+            PurchaseId: [purchaseId],
+            MemberId: ['']
+        });
+    };
+    HomeComponent.prototype.searchMembers = function (event) {
+        var _this = this;
+        this.homeService.lookupmembers(event.query)
+            .subscribe(function (data) {
+            _this.memberResults = data;
+        });
+    };
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'iacc-home',
@@ -20,7 +39,7 @@ var HomeComponent = (function () {
                 'app/home/home.css'
             ]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [home_service_1.HomeService, forms_1.FormBuilder])
     ], HomeComponent);
     return HomeComponent;
 }());

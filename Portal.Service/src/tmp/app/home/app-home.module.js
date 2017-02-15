@@ -14,6 +14,7 @@ var forms_1 = require('@angular/forms');
 var primeng_1 = require('primeng/primeng');
 var app_home_routes_1 = require('./app-home.routes');
 var home_component_1 = require('./home.component');
+var home_service_1 = require('./home.service');
 var AppHomeModule = (function () {
     function AppHomeModule() {
     }
@@ -24,8 +25,10 @@ var AppHomeModule = (function () {
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
                 primeng_1.ButtonModule,
+                primeng_1.AutoCompleteModule,
                 router_1.RouterModule.forChild(app_home_routes_1.AppHomeRoutes)],
-            declarations: [home_component_1.HomeComponent]
+            declarations: [home_component_1.HomeComponent],
+            providers: [home_service_1.HomeService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppHomeModule);

@@ -3,10 +3,11 @@ import { Http } from '@angular/http';
 import { Observable, } from 'rxjs/Observable';
 
 import { OfferedServiceModel } from '../offered-service.model';
+import { FestivalModel } from '../festival.model';
 declare let SERVICE_URL;
 
 @Injectable()
-export class AddOfferedServices {
+export class AddOfferedServicesService {
     private serviceUrls: any;
 
     constructor(private http: Http) {
@@ -24,7 +25,7 @@ export class AddOfferedServices {
     }
     public getAllFestivals() {
         return this.http.get(this.serviceUrls.TEMPLE_SERVICE + '/api/offeredservices/getallfestivals')
-            .map(res => this.convertJsonToOfferedServiceModelArray(res))
+            .map(res => this.convertJsonToFestivalModelArray(res))
             .catch((error, source) => {
                 if (error.status === 400) {
                     console.log('Bad Model.');
@@ -41,6 +42,18 @@ export class AddOfferedServices {
         ret.ServiceId = offeredSvcData.ServiceId;
 
         return ret;
+    }
+    convertJsonToFestivalModelArray(data: any) {
+        let festivalData = data.json() || [];
+        let retData = new Array<FestivalModel>();
+        festivalData.forEach(t => {
+            let ret = new FestivalModel();
+            ret.FestivalId = t.FestivalId;
+            ret.Description = t.Description;
+            ret.Name = t.Name;
+            retData.push(ret);
+        });
+        return retData;
     }
     convertJsonToOfferedServiceModelArray(data: any) {
         let offeredSvcData = data.json() || [];

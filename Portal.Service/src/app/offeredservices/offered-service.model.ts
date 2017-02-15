@@ -4,4 +4,5 @@
     Description: string;
     FestivalId: string;
     FestivalName: string;
+    SuggestedDonation: number;
 }
