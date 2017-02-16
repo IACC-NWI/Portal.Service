@@ -25,8 +25,8 @@ export class AddFestivalService {
             });
     }
     convertJsonToFestivalModel(data) {
-        var festData = data.json() || {};
-        var retFest = new FestivalModel();
+        let festData = data.json() || {};
+        let retFest = new FestivalModel();
         retFest.Description = festData.Description;
         retFest.FestivalId = festData.FestivalId;
         retFest.Name = festData.Name;

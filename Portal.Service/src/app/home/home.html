@@ -1,16 +1,151 @@
 ﻿<div class="ui-g ui-fluid">
-    <div class="ui-lg-4 ui-g-1 ui-md-4">
-        <div class="ui-g form-group" [formGroup]="purchaseOfferingsForm">
-            <p-autoComplete formControlName="MemberId" [suggestions]="memberResults" field="MemberId"
-                            (completeMethod)="searchMembers($event)">
-                <template let-member pTemplate="item">
-                    <strong> {{member.FirstName}} </strong> <br/>
-                    <strong> {{member.LastName}}</strong>
-                </template>
-            </p-autoComplete>
+    <div class="ui-g form-group" [formGroup]="purchaseOfferingsForm">
+        <div class="ui-lg-4 ui-g-1 ui-md-4">
+            <div class="card card-w-title">
+                <h1>Register for Service</h1>
+                <div class="ui-g">
+
+                    <div class="ui-g-12">
+                        <div class="ui-g">
+                            <label>Search</label>
+                            <p-autoComplete [suggestions]="memberResults" field="MemberId" size="40"
+                                            (completeMethod)="searchMembers($event)" (onSelect)="memberSelected($event)">
+                                <template let-member pTemplate="item">
+                                    <div class="ui-g">
+                                        {{member.FirstName}}&nbsp;{{member.LastName}}
+                                    </div>
+                                    <div class="ui-g">
+                                        {{member.AddressLine1}}&nbsp;{{member.AddressLine2}}
+                                    </div>
+                                    <div class="ui-g">
+                                        {{member.City}},&nbsp;{{member.State}},&nbsp;{{member.Zip}}
+                                    </div>
+                                    <div class="ui-g">
+                                        {{member.PhoneNumber}}
+                                    </div>
+
+                                </template>
+                            </p-autoComplete>
+                        </div>
+                    </div>
+                    <div class="ui-g-12">
+                        <div class="ui-g">
+                            <label>First Name</label>
+                            <input type="text" pInputText formControlName="FirstName" />
+                            <input type="hidden" formControlName="MemberId" />
+                            <input type="hidden" formControlName="PurchaseId" />
+                        </div>
+                    </div>
+                    <div class="ui-g-12">
+                        <div class="ui-g">
+                            <label>Last Name</label>
+                            <input type="text" pInputText formControlName="LastName" />
+
+                        </div>
+                    </div>
+                    <div class="ui-g-12">
+                        <div class="ui-g">
+                            <label>Email</label>
+                            <input type="text" pInputText formControlName="Email" />
+                        </div>
+                    </div>
+                    <div class="ui-g-12">
+                        <div class="ui-g">
+                            <label>Address Line 1</label>
+                            <input type="text" pInputText formControlName="AddressLine1" />
+                        </div>
+                    </div>
+                    <div class="ui-g-12">
+                        <div class="ui-g">
+                            <label>Address Line 2</label>
+                            <input type="text" pInputText formControlName="AddressLine2" />
+                        </div>
+                    </div>
+                    <div class="ui-g-4">
+                        <div class="ui-g">
+                            <label>City</label>
+                            <input type="text" pInputText formControlName="City" />
+                        </div>
+                    </div>
+                    <div class="ui-g-4">
+                        <div class="ui-g">
+                            <label>State</label>
+                            <input type="text" pInputText formControlName="State" />
+                        </div>
+                    </div>
+                    <div class="ui-g-4">
+                        <div class="ui-g">
+                            <label>Zip</label>
+                            <input type="text" pInputText formControlName="Zip" />
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="ui-lg-4 ui-md-4 ui-g-10">
+            <div class="card ">
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <label>Festival</label>
+                    </div>
+                    <div class="ui-g-12">
+
+                        <p-dropdown [options]="festivals" [autoWidth]="false"
+                                    formControlName="FestivalId"
+                                    (onChange)="festivalSelectValueChange(event)"></p-dropdown>
+                        <input type="hidden" formControlName="FestivalName" />
+
+                    </div>
+
+
+                    <div class="ui-g-12">
+                        <label>Offered Services</label>
+
+                    </div>
+                    <div class="ui-g-12">
+                        <p-dropdown [options]="offeredServices" [autoWidth]="false"
+                                    formControlName="OfferedServiceId"
+                                    (onChange)="offeredSvcSelectValueChanged(event)"></p-dropdown>
+                        <input type="hidden" pInputText formControlName="OfferedServiceName" />
+                    </div>
+
+                    <div class="ui-g-6">
+                        <div class="ui-g-12">
+                            <label>Sugested Donation</label>
+                        </div>
+                        <div class="ui-g-12">
+
+                            <span>$&nbsp;{{suggestedDonation }}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ui-g-6">
+                        <label>Your Donation</label>
+                        <input type="number" pInputText formControlName="ActualDonation" />
+                    </div>
+                    <div class="ui-g-12">
+                        <label>Service Date</label>
+                    </div>
+                    <div class="ui-g-12">
+
+                        <p-calendar id="showIcon" [showIcon]="true"
+                                    placeholder="Offering Date"
+                                    formControlName="ServiceUnFormatedDate">
+                        </p-calendar>
+                    </div>
+
+                    <div class="ui-g-12">
+                        <div class="ui-g">
+                            <button pButton label="Save" (click)="purchaseOffering(purchaseOfferingsForm.value)"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="ui-lg-4 ui-md-4 ui-g-10">
+    <!--<div class="ui-lg-4 ui-md-4 ui-g-10">
         <div class="card card-w-title">
             <h1>Lookup Member Info</h1>
             <div class="ui-g form-group">
@@ -34,7 +169,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="ui-lg-4 ui-g-1 ui-md-4"></div>
 </div>
 

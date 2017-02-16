@@ -55,19 +55,6 @@ export class AddOfferedServicesService {
         });
         return retData;
     }
-    convertJsonToOfferedServiceModelArray(data: any) {
-        let offeredSvcData = data.json() || [];
-        let retData = new Array<OfferedServiceModel>();
-        offeredSvcData.forEach(t => {
-            let ret = new OfferedServiceModel();
-            ret.Name = offeredSvcData.Name;
-            ret.Description = t.Description;
-            ret.FestivalId = t.FestivalId;
-            ret.FestivalName = t.FestivalName;
-            ret.ServiceId = t.ServiceId;
-            retData.push(ret);
-        });
-        return retData;
-    }
+    
 
 }

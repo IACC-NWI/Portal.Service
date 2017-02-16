@@ -267,6 +267,7 @@
     <TypeScriptCompile Include="src\app\home\app-home.routes.ts" />
     <TypeScriptCompile Include="src\app\home\home.component.ts" />
     <TypeScriptCompile Include="src\app\home\home.service.ts" />
+    <TypeScriptCompile Include="src\app\home\purchase-offering.model.ts" />
     <TypeScriptCompile Include="src\app\login\app-login.module.ts" />
     <TypeScriptCompile Include="src\app\login\app-login.routes.ts" />
     <TypeScriptCompile Include="src\app\login\login.component.ts" />

@@ -59,20 +59,6 @@ var AddOfferedServicesService = (function () {
         });
         return retData;
     };
-    AddOfferedServicesService.prototype.convertJsonToOfferedServiceModelArray = function (data) {
-        var offeredSvcData = data.json() || [];
-        var retData = new Array();
-        offeredSvcData.forEach(function (t) {
-            var ret = new offered_service_model_1.OfferedServiceModel();
-            ret.Name = offeredSvcData.Name;
-            ret.Description = t.Description;
-            ret.FestivalId = t.FestivalId;
-            ret.FestivalName = t.FestivalName;
-            ret.ServiceId = t.ServiceId;
-            retData.push(ret);
-        });
-        return retData;
-    };
     AddOfferedServicesService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
