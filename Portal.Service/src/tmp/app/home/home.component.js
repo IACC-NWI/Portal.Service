@@ -24,6 +24,7 @@ var HomeComponent = (function () {
         this.availableServices = new Array();
         this.offeredServices.push({ label: '-- Service --', value: null });
         this.suggestedDonation = 0;
+        this.showMemberSince = false;
     }
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -86,6 +87,10 @@ var HomeComponent = (function () {
         this.purchaseOfferingsForm.controls['State'].setValue(event.State);
         this.purchaseOfferingsForm.controls['Zip'].setValue(event.Zip);
         this.purchaseOfferingsForm.controls['MemberId'].setValue(event.MemberId);
+        this.membersince = event.MemberSince;
+        this.showMemberSince = true;
+        this.FirstName = event.FirstName;
+        this.LastName = event.LastName;
         console.log(event);
     };
     HomeComponent.prototype.searchMembers = function (event) {
@@ -98,6 +103,9 @@ var HomeComponent = (function () {
     HomeComponent.prototype.purchaseOffering = function (model) {
         model.ServiceDate = moment(model.ServiceUnFormatedDate).format('YYYY-MM-DD');
         this.homeService.purchaseOffering(model).subscribe();
+    };
+    HomeComponent.prototype.chooseAnotherMember = function () {
+        this.showMemberSince = false;
     };
     HomeComponent = __decorate([
         core_1.Component({

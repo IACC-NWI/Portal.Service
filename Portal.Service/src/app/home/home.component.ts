@@ -25,6 +25,10 @@ export class HomeComponent implements OnInit {
     offeredServices: SelectItem[];
     availableServices: OfferedServiceModel[];
     suggestedDonation: number;
+    membersince: string;
+    showMemberSince: boolean;
+    FirstName: string;
+    LastName: string;
     constructor(private homeService: HomeService, private formBuilder: FormBuilder) {
         this.festivals = new Array<SelectItem>();
         this.availableFestivals = new Array<FestivalModel>();
@@ -33,6 +37,7 @@ export class HomeComponent implements OnInit {
         this.availableServices = new Array<OfferedServiceModel>();
         this.offeredServices.push({ label: '-- Service --', value: null });
         this.suggestedDonation = 0;
+        this.showMemberSince = false;
     }
 
     ngOnInit(): void {
@@ -99,6 +104,10 @@ export class HomeComponent implements OnInit {
         this.purchaseOfferingsForm.controls['State'].setValue(event.State);
         this.purchaseOfferingsForm.controls['Zip'].setValue(event.Zip);
         this.purchaseOfferingsForm.controls['MemberId'].setValue(event.MemberId);
+        this.membersince = event.MemberSince;
+        this.showMemberSince = true;
+        this.FirstName = event.FirstName;
+        this.LastName = event.LastName;
         console.log(event);
     }
     searchMembers(event) {
@@ -111,5 +120,8 @@ export class HomeComponent implements OnInit {
     purchaseOffering(model: PurchaseOfferingModel) {
         model.ServiceDate = moment(model.ServiceUnFormatedDate).format('YYYY-MM-DD');
         this.homeService.purchaseOffering(model).subscribe();
+    }
+    chooseAnotherMember() {
+        this.showMemberSince = false;
     }
 }

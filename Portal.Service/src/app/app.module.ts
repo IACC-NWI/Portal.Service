@@ -11,8 +11,7 @@ import { AppHomeModule } from './home/app-home.module';
 import { AppLoginModule } from './login/app-login.module';
 import { AppMemberModule } from './member/app-member.module';
 import { AppOfferedServicesModule } from './offeredservices/app-offered-services.module';
-// import { AppMemberModule } from './member/app-member.module';
-// import { AppAdminModule } from './admin/app-admin.module';
+import { AppReportsModule } from './reports/app-reports.module';
 
 const routing = RouterModule.forRoot(AppRoutes);
 
@@ -28,7 +27,8 @@ const routing = RouterModule.forRoot(AppRoutes);
         AppHomeModule,
         AppLoginModule,
         AppMemberModule,
-        AppOfferedServicesModule
+        AppOfferedServicesModule,
+        AppReportsModule
     ],
     declarations: [
         AppComponent

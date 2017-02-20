@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/reports/purchases.model.ts"],"names":[],"mappings":";AAAA;IAAA;IAKA,CAAC;IAAD,qBAAC;AAAD,CALA,AAKC,IAAA;AALY,sBAAc,iBAK1B,CAAA","file":"purchases.model.js","sourcesContent":["export class PurchasesModel {\r\n    Name: string;\r\n    ServiceId: string;\r\n    Count: number;   \r\n    TotalDonations: number; \r\n}\r\n"]}

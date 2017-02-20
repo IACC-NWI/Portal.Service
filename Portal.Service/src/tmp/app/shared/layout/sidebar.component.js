@@ -29,6 +29,7 @@ var SidebarComponent = (function () {
         // if (user && user.profile && user.profile.roles) {
         this.items.push(this.dashboardNav);
         this.items.push(this.adminNav);
+        this.items.push(this.reportsNav);
         // }
     };
     SidebarComponent.prototype.initializeLinks = function () {
@@ -62,6 +63,27 @@ var SidebarComponent = (function () {
                     label: 'Add Service',
                     command: function (event) { _this.router.navigate(['addofferedservice']); },
                     routerLink: ['/addofferedservice']
+                }
+            ]
+        };
+        this.reportsNav = {
+            label: 'Reports',
+            icon: 'pageview',
+            items: [
+                {
+                    label: 'Donor Report',
+                    command: function (event) { _this.router.navigate(['donorreport']); },
+                    routerLink: ['/donorreport']
+                },
+                {
+                    label: 'Donor Range',
+                    command: function (event) { _this.router.navigate(['donorrange']); },
+                    routerLink: ['/donorrange']
+                },
+                {
+                    label: 'Offerings Report',
+                    command: function (event) { _this.router.navigate(['purchaserange']); },
+                    routerLink: ['/purchaserange']
                 }
             ]
         };

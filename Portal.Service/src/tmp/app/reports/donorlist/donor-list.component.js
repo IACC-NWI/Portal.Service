@@ -9,29 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent(el) {
-        this.el = el;
-        this.layoutCompact = false;
-        this.layoutMode = 'static';
-        this.darkMenu = false;
-        this.profileMode = 'inline';
-        this.growlermessages = [];
-        // statusMessagingService.itErrored$.subscribe(e => this.onError(e));
-        // statusMessagingService.itSucceeded$.subscribe(e => this.onSuccess(e));
+var donor_list_service_1 = require('./donor-list.service');
+var DonorListComponent = (function () {
+    function DonorListComponent(donorService) {
+        this.donorService = donorService;
+        this.donors = new Array();
     }
-    AppComponent.prototype.ngAfterViewInit = function () {
-        Ultima.init(this.el.nativeElement);
+    DonorListComponent.prototype.ngOnInit = function () {
+        var self = this;
+        this.donorService.getListOfDonors().subscribe(function (t) { return self.donors = t; });
     };
-    AppComponent = __decorate([
+    DonorListComponent = __decorate([
         core_1.Component({
-            selector: 'iacc-main-app',
-            templateUrl: 'app/app.html',
+            selector: 'iacc-donor-list',
+            templateUrl: 'app/reports/donorlist/donor-list.html'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [donor_list_service_1.DonorListService])
+    ], DonorListComponent);
+    return DonorListComponent;
 }());
-exports.AppComponent = AppComponent;
+exports.DonorListComponent = DonorListComponent;
 
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=donor-list.component.js.map

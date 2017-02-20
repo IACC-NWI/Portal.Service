@@ -15,6 +15,7 @@ export class SidebarComponent implements OnInit {
     private authSubscription: Subscription;
     private dashboardNav: MenuItem;
     private adminNav: MenuItem;
+    private reportsNav: MenuItem;
 
     constructor(private route: ActivatedRoute,
         private router: Router, private authEventService: AuthEventService) {
@@ -37,7 +38,8 @@ export class SidebarComponent implements OnInit {
 
             this.items.push(this.dashboardNav);
             this.items.push(this.adminNav);
-            
+        this.items.push(this.reportsNav);
+
         // }
     }
 
@@ -73,6 +75,27 @@ export class SidebarComponent implements OnInit {
                     label: 'Add Service',
                     command: (event) => { this.router.navigate(['addofferedservice']) },
                     routerLink: ['/addofferedservice']
+                }
+            ]
+        };
+        this.reportsNav = {
+            label: 'Reports',
+            icon: 'pageview',
+            items: [
+                {
+                    label: 'Donor Report',
+                    command: (event) => { this.router.navigate(['donorreport']) },
+                    routerLink: ['/donorreport']
+                },
+                {
+                    label: 'Donor Range',
+                    command: (event) => { this.router.navigate(['donorrange']) },
+                    routerLink: ['/donorrange']
+                },
+                {
+                    label: 'Offerings Report',
+                    command: (event) => { this.router.navigate(['purchaserange']) },
+                    routerLink: ['/purchaserange']
                 }
             ]
         };

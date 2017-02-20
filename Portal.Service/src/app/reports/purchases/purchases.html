@@ -1,0 +1,39 @@
+﻿<div class="ui-g">
+    <div class="ui-g-12">
+        <div class="card card-w-title">
+            <h1>Purchases with Range</h1>
+            <div class="ui-g">
+                <div class="ui-g-12">
+                    <div class="ui-g">
+                        <div class="ui-g-4">
+                            <div class="ui-g">
+                                <label>Start Date: </label>
+                                <p-calendar [(ngModel)]="startDate" [showIcon]="true"></p-calendar>
+                            </div>
+
+                        </div>
+                        <div class="ui-g-4">
+                            <div class="ui-g">
+                                <label>End Date: </label>
+                                <p-calendar [(ngModel)]="endDate" [showIcon]="true"></p-calendar>
+                            </div>
+
+                        </div>
+                        <div class="ui-g-4">
+                            <button pButton label="View Report" icon="ui-icon-attach-money" (click)="search()"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <div class="ui-g">
+                        <p-dataTable #dt [value]="purchases" [responsive]="true">
+                            <p-column field="Name" header="Service Name" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                            <p-column field="Count" header="Count" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                            <p-column field="TotalDonations" header="Total Donation" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                        </p-dataTable>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

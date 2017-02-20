@@ -9,7 +9,7 @@ declare var Ultima: any;
 })
 export class AppComponent implements AfterViewInit {
     error: string;
-    layoutCompact: boolean = true;
+    layoutCompact: boolean = false;
     layoutMode: string = 'static';
     darkMenu: boolean = false;
     profileMode: string = 'inline';

@@ -27,6 +27,7 @@ var AppHomeModule = (function () {
                 primeng_1.ButtonModule,
                 primeng_1.AutoCompleteModule,
                 primeng_1.DropdownModule,
+                primeng_1.PanelModule,
                 primeng_1.CalendarModule,
                 router_1.RouterModule.forChild(app_home_routes_1.AppHomeRoutes)],
             declarations: [home_component_1.HomeComponent],

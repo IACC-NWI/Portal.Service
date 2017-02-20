@@ -1,0 +1,15 @@
+﻿<div class="ui-g">
+    <div class="ui-g-12">
+        <div class="card card-w-title">
+            <h1>Donor Report</h1>
+            <div class="ui-g">
+                <p-dataTable #dt [value]="donors" [responsive]="true">
+                    <p-column field="FirstName" header="First Name" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                    <p-column field="LastName" header="First Name" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                    <p-column field="Email" header="Email" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                    <p-column field="TotalDonation" header="Total Donation" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                </p-dataTable>
+            </div>
+        </div>
+    </div>
+</div>
