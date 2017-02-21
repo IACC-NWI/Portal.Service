@@ -8,6 +8,10 @@ import { AddFestivalComponent } from './addfestival/add-festival.component';
 import { AddFestivalService } from './addfestival/add-festival.service';
 import { AddOfferedServicesComponent } from './addofferedservices/add-offered-services.component';
 import { AddOfferedServicesService } from './addofferedservices/add-offered-services.service';
+import { FestivalsComponent } from './festivals/festivals.component';
+import { FestivalService } from './festivals/festivals.service';
+import { ListOfferedServicesComponent } from './listofferedservices/list-offered-services.component';
+import { ListOfferedServicesService } from './listofferedservices/list-offered-services.service';
 
 @NgModule({
     imports: [
@@ -21,11 +25,15 @@ import { AddOfferedServicesService } from './addofferedservices/add-offered-serv
         RouterModule.forChild(AppOfferedServicesRoutes)],
     declarations: [
         AddFestivalComponent,
-        AddOfferedServicesComponent
+        AddOfferedServicesComponent,
+        FestivalsComponent,
+        ListOfferedServicesComponent
     ],
     providers: [
         AddFestivalService,
-        AddOfferedServicesService
+        AddOfferedServicesService,
+        FestivalService,
+        ListOfferedServicesService
     ]
 
 })

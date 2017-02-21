@@ -21,7 +21,10 @@ export class AddMemberComponent implements OnInit {
 
     saveMember(model: MemberModel) {
         this.addMemberService.addMember(model)
-            .subscribe(memberAdded => this.memberToAdd = memberAdded);
+            .subscribe(memberAdded => {
+                this.memberToAdd = memberAdded;
+                alert("Member Added.");
+            });
     }
 
     ngOnInit(): void {

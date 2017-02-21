@@ -102,7 +102,7 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.purchaseOffering = function (model) {
         model.ServiceDate = moment(model.ServiceUnFormatedDate).format('YYYY-MM-DD');
-        this.homeService.purchaseOffering(model).subscribe();
+        this.homeService.purchaseOffering(model).subscribe(function (ret) { return alert('Service Purchased.'); });
     };
     HomeComponent.prototype.chooseAnotherMember = function () {
         this.showMemberSince = false;

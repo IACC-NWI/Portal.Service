@@ -48,7 +48,10 @@ var AddOfferedServicesComponent = (function () {
     AddOfferedServicesComponent.prototype.saveOfferedService = function (model) {
         var _this = this;
         this.addOfferedServicesService.addNewOfferedService(model)
-            .subscribe(function (offeredSvc) { return _this.offeredServiceToAdd = offeredSvc; });
+            .subscribe(function (offeredSvc) {
+            _this.offeredServiceToAdd = offeredSvc;
+            alert('Service Added.');
+        });
     };
     AddOfferedServicesComponent = __decorate([
         core_1.Component({

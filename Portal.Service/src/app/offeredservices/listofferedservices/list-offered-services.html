@@ -1,0 +1,18 @@
+﻿<div class="ui-g-12">
+    <div class="card card-w-title">
+        <h1>Offered Services</h1>
+        <div class="ui-g">
+            <button pButton label="Add New Service" [routerLink]="['/addofferedservice']"></button>
+            <p-dataTable #dt [value]="offeredServices" [responsive]="true">
+                <p-column field="Name" header="Name" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                <p-column field="FestivalName" header="Festival" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                <p-column field="SuggestedDonation" header="Suggested Donation" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                <p-column field="action" header="Action">
+                    <template pTemplate="body" let-offeredSvc="rowData">
+                        <a [routerLink]="['/editofferedService', offeredSvc.ServiceId]" style="cursor: pointer"><i class="fa ui-icon-edit"></i></a>
+                    </template>
+                </p-column>
+            </p-dataTable>
+        </div>
+    </div>
+</div>

@@ -34,6 +34,7 @@ var AddFestivalService = (function () {
         retFest.Description = festData.Description;
         retFest.FestivalId = festData.FestivalId;
         retFest.Name = festData.Name;
+        retFest.FestivalId = festData.FestivalId;
         return retFest;
     };
     AddFestivalService = __decorate([

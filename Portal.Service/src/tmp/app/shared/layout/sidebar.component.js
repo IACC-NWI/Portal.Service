@@ -55,6 +55,16 @@ var SidebarComponent = (function () {
                     routerLink: ['/addmember']
                 },
                 {
+                    label: 'Show Festivals',
+                    command: function (event) { _this.router.navigate(['showfestivals']); },
+                    routerLink: ['/showfestivals']
+                },
+                {
+                    label: 'Show Services',
+                    command: function (event) { _this.router.navigate(['showofferedservices']); },
+                    routerLink: ['/showofferedservices']
+                },
+                {
                     label: 'Add Festival',
                     command: function (event) { _this.router.navigate(['addfestival']); },
                     routerLink: ['/addfestival']

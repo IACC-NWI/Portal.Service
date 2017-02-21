@@ -53,6 +53,9 @@ export class AddOfferedServicesComponent implements OnInit {
 
     saveOfferedService(model: OfferedServiceModel): void {
         this.addOfferedServicesService.addNewOfferedService(model)
-            .subscribe(offeredSvc => this.offeredServiceToAdd = offeredSvc);
+            .subscribe(offeredSvc => {
+                this.offeredServiceToAdd = offeredSvc;
+                alert('Service Added.');
+            });
     }
 }

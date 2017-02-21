@@ -28,7 +28,10 @@ var AddFestivalComponent = (function () {
     AddFestivalComponent.prototype.saveFestival = function (model) {
         var _this = this;
         this.addFestivalService.addFestival(model)
-            .subscribe(function (festivalModel) { return _this.festivalToAdd = festivalModel; });
+            .subscribe(function (festivalModel) {
+            _this.festivalToAdd = festivalModel;
+            alert('Festival Added.');
+        });
     };
     AddFestivalComponent = __decorate([
         core_1.Component({

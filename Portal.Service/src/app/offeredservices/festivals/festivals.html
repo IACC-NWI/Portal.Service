@@ -1,0 +1,16 @@
+﻿<div class="ui-g-12">
+    <div class="card card-w-title">
+        <h1>Festivals</h1>
+        <div class="ui-g">
+            <button pButton label="Add New Festival" [routerLink]="['/addfestival']" ></button>
+            <p-dataTable #dt [value]="festivals" [responsive]="true">
+                <p-column field="Name" header="Name" filter="true" filterMatchMode="contains" sortable="true"></p-column>
+                <p-column field="action" header="Action">
+                    <template pTemplate="body" let-festival="rowData">
+                        <a [routerLink]="['/editfestival', festival.FestivalId]" style="cursor: pointer"><i class="fa ui-icon-edit"></i></a>
+                    </template>
+                </p-column>
+            </p-dataTable>
+        </div>
+    </div>
+</div>

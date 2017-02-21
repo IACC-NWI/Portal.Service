@@ -119,7 +119,7 @@ export class HomeComponent implements OnInit {
 
     purchaseOffering(model: PurchaseOfferingModel) {
         model.ServiceDate = moment(model.ServiceUnFormatedDate).format('YYYY-MM-DD');
-        this.homeService.purchaseOffering(model).subscribe();
+        this.homeService.purchaseOffering(model).subscribe(ret => alert('Service Purchased.'));
     }
     chooseAnotherMember() {
         this.showMemberSince = false;

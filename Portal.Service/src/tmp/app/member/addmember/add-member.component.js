@@ -24,7 +24,10 @@ var AddMemberComponent = (function () {
     AddMemberComponent.prototype.saveMember = function (model) {
         var _this = this;
         this.addMemberService.addMember(model)
-            .subscribe(function (memberAdded) { return _this.memberToAdd = memberAdded; });
+            .subscribe(function (memberAdded) {
+            _this.memberToAdd = memberAdded;
+            alert("Member Added.");
+        });
     };
     AddMemberComponent.prototype.ngOnInit = function () {
         var memberId = angular2_uuid_1.UUID.UUID();

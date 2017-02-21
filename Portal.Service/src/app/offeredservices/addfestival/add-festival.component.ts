@@ -28,6 +28,9 @@ export class AddFestivalComponent implements OnInit {
 
     saveFestival(model: FestivalModel) {
         this.addFestivalService.addFestival(model)
-            .subscribe(festivalModel => this.festivalToAdd = festivalModel);
+            .subscribe(festivalModel => {
+                this.festivalToAdd = festivalModel;
+                alert('Festival Added.');
+            });
     }
 }
